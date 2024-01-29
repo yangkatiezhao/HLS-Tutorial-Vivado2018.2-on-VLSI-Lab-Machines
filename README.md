@@ -48,7 +48,7 @@ Let’s design a vector addition module using C/C++ in Vivado HLS. We will first
    ![image-6](figures/6.png)
 5. You should see a window like the one shown below.
    ![image-7](figures/7.png)
-6. Now we can design our accelerator in C++ and simulate with Vitis. To do so, start by creating a new source file named `top.c` in your desired folder as the following:
+6. Now we can design our accelerator in C++ and simulate with Vivado. To do so, start by creating a new source file named `top.c` in your desired folder as the following:
    ![image-8](figures/8.png)
    ```C++
    // top.c
@@ -185,7 +185,7 @@ When working with larger designs, it may be easier to simply work on the command
    
    exit
    ```
-3. Invoke Vitis in batch-mode and pass the TCL file as argument.
+3. Invoke Vivado in batch-mode and pass the TCL file as argument.
    ```Bash
    $ faketime -f "-4y" vivado_hls synth.tcl
    ```
@@ -193,7 +193,7 @@ When working with larger designs, it may be easier to simply work on the command
    ![image-23](figures/23.png)   
 5. To view the performance reports, open `proj/solution2/syn/report/top_csynth.rpt`.
    ![image-24](figures/24.png)
-6. You can view the log file `vitis_hls.log` for any warnings. To view the synthesized RTL, go to `proj/solution2/impl/verilog/`.
+6. You can view the log file `vivado_hls.log` for any warnings. To view the synthesized RTL, go to `proj/solution2/impl/verilog/`.
 
 ## Generating Bitstream in Vivado
 1. Invoke Vivado GUI.

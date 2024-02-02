@@ -21,7 +21,7 @@ $ bash ~/miniconda3/miniconda.sh
 ```
 Install faketime using pip. 
 ```
-$ pip install faketime
+$ pip install faketime==0.9.6.5
 ```
 #### Step 4
 Launch Vivado_HLS GUI by invoking the following command. (Katie: The latest versions of Vivado/Vitis don't require faketime. I'll notify you once Vitis 2022.1 is installed on our VLSI machines.)

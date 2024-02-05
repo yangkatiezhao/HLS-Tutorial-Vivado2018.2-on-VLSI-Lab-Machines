@@ -248,4 +248,58 @@ When working with larger designs, it may be easier to simply work on the command
 16. After generating the bitstream we need two files for running the vector addition on FPGA: the bitstream with `.bit` as the extension and the hardware handoff file with `.hwh`. You can find the `.bit` file under `adderProject/adderProject.runs/impl_1`. The `.hwh` file is under the directory `adderProject/adderProject.gen/sources_1/bd/design_1/hw_handoff`.
 17. You can download these two files to a flash drive and put them on your own laptop for the next step. Note that these two files must have the same name except for the extension.
 
-## Deploying the Adder on FPGA -- On the way :-)
+## Deploying the Adder on FPGA
+1. Check this [page](http://www.pynq.io/board.html) for setting up the Ultra96V2 board. (The SD card has image already. No need to flash the SD card for now.)
+2. Connect with a USB cable. Use your browser on your computer to connect to the board using the IP address of **192.168.3.1**. Jupyter login password: **xilinx**.
+3. Upload the `.bit` file and the `.hwh` file to Jupyter. In the same folder, create a new `.ipynb` file for writing the script.
+    - Click [here](https://pynq.readthedocs.io/en/v2.0/overlay_design_methodology/overlay_tutorial.html) to access the overlay tutorial.
+4. Find the address offset of the memory ports (`a`, `b`, and `sum`, in this example). This information can be found in the xtop_hw.h file under `solution1/impl/misc/drivers/top_v1_0/src` directory.
+5. Below is the example Python host code to control the FPGA kernel.
+   ```Python
+   import numpy as np
+   import pynq
+   from pynq import MMIO
+   
+   overlay = pynq.Overlay('adder.bit')
+   
+   top_ip = overlay.top_0
+   top_ip.signature
+   
+   a_buffer = pynq.allocate((100), np.int32)
+   b_buffer = pynq.allocate((100), np.int32)
+   sum_buffer = pynq.allocate((100), np.int32)
+   
+   # initialize input
+   for i in range (0, 100):
+       a_buffer[i] = i
+       b_buffer[i] = i+5
+   
+   aptr = a_buffer.physical_address
+   bptr = b_buffer.physical_address
+   sumptr = sum_buffer.physical_address
+   
+   # specify the address
+   # These addresses can be found in the generated .v file: top_control_s_axi.v
+   top_ip.write(0x10, aptr)
+   top_ip.write(0x1c, bptr)
+   top_ip.write(0x28, sumptr)
+   
+   
+   # start the HLS kernel
+   top_ip.write(0x00, 1)
+   isready = top_ip.read(0x00)
+   
+   while( isready == 1 ):
+       isready = top_ip.read(0x00)
+   
+   print("Array A:")
+   print(a_buffer[0:10])
+   print("\nArray B:")
+   print(b_buffer[0:10])
+   
+   print("\nExpected Sum:")
+   print((a_buffer + b_buffer)[0:10])
+   
+   print("\nFPGA returns:")
+   print(sum_buffer[0:10])
+   ```

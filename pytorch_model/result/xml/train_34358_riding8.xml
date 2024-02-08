@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<annotation>
+		<filename>train_34358_riding8</filename>
+		<size>
+			<width>640</width>
+			<length>360</length>
+		</size>
+		<object>
+			<name>NotCare</name>
+			<bndbox>
+				<xmin>28.031692504882805</xmin>
+				<xmax>182.51715087890625</xmax>
+				<ymin>96.52720069885252</ymin>
+				<ymax>255.6694507598877</ymax>
+			</bndbox>
+		</object>
+	</annotation>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<annotation>
+		<filename>train_73100_car14</filename>
+		<size>
+			<width>640</width>
+			<length>360</length>
+		</size>
+		<object>
+			<name>NotCare</name>
+			<bndbox>
+				<xmin>280.48416233062744</xmin>
+				<xmax>297.7387990951538</xmax>
+				<ymin>92.24229347705841</ymin>
+				<ymax>115.63905036449431</ymax>
+			</bndbox>
+		</object>
+	</annotation>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<annotation>
+		<filename>train_26720_person20</filename>
+		<size>
+			<width>640</width>
+			<length>360</length>
+		</size>
+		<object>
+			<name>NotCare</name>
+			<bndbox>
+				<xmin>297.84044456481934</xmin>
+				<xmax>335.52222633361816</xmax>
+				<ymin>165.56750106811526</ymin>
+				<ymax>242.7791404724121</ymax>
+			</bndbox>
+		</object>
+	</annotation>

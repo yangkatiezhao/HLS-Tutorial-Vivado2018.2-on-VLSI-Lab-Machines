@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<annotation>
+		<filename>train_1710_riding17</filename>
+		<size>
+			<width>640</width>
+			<length>360</length>
+		</size>
+		<object>
+			<name>NotCare</name>
+			<bndbox>
+				<xmin>314.6518077850342</xmin>
+				<xmax>331.9529895782471</xmax>
+				<ymin>163.40141558647156</ymin>
+				<ymax>201.51194500923154</ymax>
+			</bndbox>
+		</object>
+	</annotation>

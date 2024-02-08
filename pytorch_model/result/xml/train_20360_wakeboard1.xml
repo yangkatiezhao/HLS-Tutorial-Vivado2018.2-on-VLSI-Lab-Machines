@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<annotation>
+		<filename>train_20360_wakeboard1</filename>
+		<size>
+			<width>640</width>
+			<length>360</length>
+		</size>
+		<object>
+			<name>NotCare</name>
+			<bndbox>
+				<xmin>478.4557189941406</xmin>
+				<xmax>504.0990295410156</xmax>
+				<ymin>206.27959299087527</ymin>
+				<ymax>239.19980764389038</ymax>
+			</bndbox>
+		</object>
+	</annotation>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<annotation>
+		<filename>train_7486_group2</filename>
+		<size>
+			<width>640</width>
+			<length>360</length>
+		</size>
+		<object>
+			<name>NotCare</name>
+			<bndbox>
+				<xmin>274.48798084259033</xmin>
+				<xmax>289.38421154022217</xmax>
+				<ymin>107.07766449451445</ymin>
+				<ymax>141.2086991071701</ymax>
+			</bndbox>
+		</object>
+	</annotation>

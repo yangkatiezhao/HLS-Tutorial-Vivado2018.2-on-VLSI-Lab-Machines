@@ -10,6 +10,7 @@
 #define EPS 1e-6
 #include <iostream>
 #include <fstream>
+#include <stdlib.h>
 
 void conv2dNoPaddingNoBias(float inBuffer[batchSize][numInputChannels][inputHeight][inputWidth],
     float wBuffer[numOutputChannels][numInputChannels][kernelSize][kernelSize],

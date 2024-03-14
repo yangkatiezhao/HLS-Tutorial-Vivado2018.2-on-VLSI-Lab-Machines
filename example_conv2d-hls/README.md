@@ -1,6 +1,6 @@
 # Example: HLS implemented CONV layer
 
-This example provided one complete conv layer implemented in HLS. For the whole large convolutional layer to be offloaed to FPGA, it has to be tiled and quantized.
+This example provided one complete conv layer implemented in HLS. For the whole large convolutional layer to be offloaded to FPGA, it has to be tiled and quantized.
 
 We provide instructions to show the HLS functions (under C simulation) can (1) match the actual output of the conv layer and (2) pass the synthesis. You can implement/test the depth-wise conv layer and the point-wise conv layer for milestone 2 following the same way.
 
